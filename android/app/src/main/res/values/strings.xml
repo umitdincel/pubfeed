@@ -8,4 +8,10 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="intro_1_header">Chat With The Near</string>
+    <string name="intro_2_header">Meet New People</string>
+    <string name="intro_3_header">That’s All</string>
+    <string name="intro_1_desc">While most people enjoy casino gambling, sports betting, lottery and bingo playing for the fun.</string>
+    <string name="intro_2_desc">While most people enjoy casino gambling, sports betting, lottery and bingo playing for the fun.</string>
+    <string name="intro_3_desc">While most people enjoy casino gambling, sports betting, lottery and bingo playing for the fun.</string>
 </resources>

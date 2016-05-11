@@ -1,13 +1,60 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:weightSum="2"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
     tools:context=".intro.Intro1Fragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:gravity="bottom|center_horizontal"
+        android:layout_weight="1"
+        android:paddingBottom="20dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/fragment_image_3"/>
+    </LinearLayout>
 
-</FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_weight="1">
+        <TextView
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText"
+            android:layout_gravity="center"
+            android:text="@string/intro_3_header" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:ems="10"
+            android:id="@+id/editText2"
+            android:layout_gravity="center_horizontal|bottom"
+            android:text="@string/intro_3_desc" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/fb_button"
+            android:layout_marginTop="20dp"
+            android:textColor="#fff"
+            android:onClick="facebookLogin"
+            android:text="Facebook Giriş"/>
+    </LinearLayout>
+
+
+</LinearLayout>
