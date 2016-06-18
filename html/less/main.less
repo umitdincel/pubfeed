@@ -1,0 +1,194 @@
+/*==============================
+=            Import            =
+==============================*/
+
+@import "mixins/all"; // Copyright & Documentation: http://clearleft.github.com/clearless/
+@import "ui";
+@import "forms";
+@import "variables";
+@import "typography";
+
+// if you want normalize css, you should write `.normalize()`
+.reset();
+
+/*==============================
+=            Layout            =
+==============================*/
+body, html {
+  	height: 100%;
+    font-family: @opensans;
+}
+
+header{
+    padding: 20px;
+
+    &.dashboard {
+        h1 {
+            display: inline-block;
+            padding-right: 20px;
+            margin-right: 20px;
+            border-right: 1px solid #000;
+
+            a { 
+                color: #000; 
+                text-decoration: none;
+            }
+        }
+
+        .menu {
+            display: inline-block;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                float: left;
+                margin-right: 10px;
+
+                a { color: @blue; }
+            }
+        }
+    }
+}
+
+section.homepage {
+    #section0 {
+        margin: 0 auto;
+        width: 600px;
+
+        div.logo{
+            width: 100%;
+            height: 150px;
+            background-image: url("../img/logo.png");
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        div.left-phone{
+            position: absolute;
+            top: 70px;
+            left: -375px;
+            width: 280px;
+            height: 570px;
+            background-image: url("../img/white-iphone.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        div.right-phone{
+            position: absolute;
+            top: 70px;
+            right: -375px;
+            width: 280px;
+            height: 570px;
+            background-image: url("../img/black-iphone.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        h1 {
+            position: relative;
+            margin-bottom: 50px;
+            span {
+                position: absolute;
+                top: 14px;
+                left: 180px;
+                padding-bottom: 10px;
+                font-size: 18px; 
+            }
+        }
+    }
+
+    .user-type {
+        width: 300px;
+        margin: 0 auto;
+        margin-bottom: 50px;
+
+        h1 { 
+            text-align: center;
+            color: #fff; 
+        }
+    }
+
+    .signup-button {
+        width: 300px;
+        margin: 0 auto;
+        margin-top: 50px;
+
+        button {
+            width: 100%;
+            font-size: 20px;
+        }
+    }
+
+    .login-button {
+        text-align: center;
+    }
+}
+
+section.login-box {
+    margin-top: 7%;
+    margin-left: calc(~"50% - 150px");
+    padding-top: 150px;
+    width: 300px;
+    height: auto;
+    background-image: url("../img/logo.png");
+    background-repeat: no-repeat;
+    background-position: center 10px;
+
+    .checkbox input { margin-top: 2px; }
+    
+    a { text-decoration: none; }
+
+    button {
+        font-weight: 600;
+        color: #fff;
+        background-color: @blue; 
+
+        &:hover { color: #fff; }
+    }
+}
+
+section.dashboard {
+    margin: 0 auto;
+    width: 600px;
+
+    .list-group {
+        h3 {
+            display: inline-block;
+        }
+
+        >button { margin: 0 0 9px 5px; }
+
+        .list-group-item.active {
+            background-color: @blue;
+            border-color: @blue;
+        }
+    }
+
+    .profile-update {
+        font-weight: 600;
+        color: #fff;
+        background-color: @blue; 
+
+        &:hover { color: #fff; }
+    }
+}
+
+#addSlogan, #editSlogan {
+    .desc {
+        margin: 50px 0;
+    }
+
+    .input-group { margin-bottom: 20px; }
+}
+
+footer {
+
+}
+
+/*==================================
+=            Responsive            =
+==================================*/
+@import "responsive";
+

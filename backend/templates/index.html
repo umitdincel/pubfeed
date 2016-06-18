@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block title %}Pub Feed | Lokasyon bazli mesajlasma{% endblock %}
+
+{% block content_title %}{% if search %}Search "{{ search }}"{% else %}Blog entries{% endif %}{% endblock %}
+
+{% block main %}
+<section id="fullpage" class="homepage">
+    <div class="section active" id="section0">
+        <div class="left-phone"></div>
+        <div class="right-phone"></div>
+        <div class="logo"></div>
+        <h1>Pubfeed | <span>Lokasyon bazlı mesajlaşma uygulaması</span></h1>
+        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+        <div class="login-button">
+            <a href="{{ url_for('login') }}" style="margin-right: 10px;text-decoration:none;">
+                <button class="btn btn-default">Giriş yap</button>
+            </a>
+            <a href="{{ url_for('signup') }}" style="text-decoration:none;">
+                <button class="btn btn-default">Kayıt Ol</button>
+            </a>
+        </div>
+
+    </div>
+    
+    <div class="section" id="section1">
+        <div class="user-type">
+            <h1>Üyelik paketleri</h1>
+        </div>
+        <div class="container">
+            <div class="row flat">
+                <div class="col-lg-4 col-md-4 col-xs-6">
+                    <ul class="plan plan1">
+                        <li class="plan-name">
+                            Küçük Paket
+                        </li>
+                        <li class="plan-price">
+                            <strong>3 saat</strong> / Periyot
+                        </li>
+                        <li>
+                            <strong>3 slogan</strong> / Farkli
+                        </li>
+                        <li>
+                            <strong>1 işyeri</strong> kaydı
+                        </li>
+                        <li>
+                            <strong>5₺</strong> / Aylık
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-xs-6">
+                    <ul class="plan plan2 featured">
+                        <li class="plan-name">
+                            Orta Paket
+                        </li>
+                        <li class="plan-price">
+                            <strong>1.5 saat</strong> / Periyot
+                        </li>
+                        <li>
+                            <strong>5 slogan</strong> / Farkli
+                        </li>
+                        <li>
+                            <strong>2 işyeri</strong> kaydı
+                        </li>
+                        <li>
+                            <strong>10₺</strong> / Aylık
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-xs-6">
+                    <ul class="plan plan3">
+                        <li class="plan-name">
+                            Büyük Paket
+                        </li>
+                        <li class="plan-price">
+                            <strong>Yarım saat</strong> / Periyot
+                        </li>
+                        <li>
+                            <strong>10 slogan</strong> / Farkli
+                        </li>
+                        <li>
+                            <strong>5 işyeri</strong> kaydı
+                        </li>
+                        <li>
+                            <strong>20₺</strong> / Aylık
+                        </li>
+                    </ul>
+                </div>
+
+                
+            </div>
+        </div>
+
+        <div class="signup-button">
+            <a href="{{ url_for('signup') }}">
+                <button class="btn btn-warning">Kayıt Ol <span class="glyphicon glyphicon-user"></span></button>
+            </a>
+        </div>
+    </div>
+    
+    <div class="section" id="section2">
+        <h1>Misyonumuz</h1>
+    </div>
+</div>
+{% endblock %}

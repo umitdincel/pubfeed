@@ -1,0 +1,8 @@
+flask
+BeautifulSoup
+micawber
+pygments
+markdown
+peewee
+bcrypt
+

@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+
+{% block title %}Pub Feed | Dashboard{% endblock %}
+
+{% block main %}
+      
+      <header class="dashboard">
+          <h1 class="shop-name"><a href="{{ url_for('dashboard') }}">{{ company_name }}</a></h1>
+          <ul class='menu'>
+              <li><a href="{{ url_for('settings') }}">Bilgileri Güncelle</a></li>
+              <li><a href="{{ url_for('logout') }}">Çıkış</a></li>
+          </ul>
+      </header>
+      
+      <section class="dashboard">
+          <div class="list-group">
+              <h3>Sloganlar</h3>
+              
+              <button type="button" class="btn btn-default btn-number" data-toggle="modal" data-target="#addSlogan">
+                  <span class="glyphicon glyphicon-plus"></span>
+              </button>
+              
+              {% for slogan in object_list %}
+                <a href="#" data-slogan-id='{{ slogan.id }}' class="list-group-item">{{ slogan.text }}</a>
+              {% endfor %}
+          </div>
+          <div class="action-buttons hide">
+              <button class="btn btn-warning">Duzenle</button>
+              <button class="btn btn-danger">Sil</button>
+          </div>
+      </section>
+
+
+      <div id="addSlogan" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+              <!-- Modal content-->
+              <div class="modal-content">
+                  
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">Slogan Ekle</h4>
+                  </div>
+                  
+                  <div class="modal-body">
+                      <div class="desc">
+                          Unutmayın! Yazacağınız sloganlar ile size yakın olan kullanıcıları etkileyip bu kullanıcıları müşteriniz yapabilirsiniz.
+                      </div>
+                      <form method="post" action="slogan">
+                        <div class="input-group">
+                          <input type="text" name="slogan" class="form-control" placeholder="Kurumunuz için bir slogan">
+                          <span class="input-group-btn">
+                            <button class="btn btn-success" type="submit">Ekle</button>
+                          </span>
+                        </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div id="editSlogan" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+              <!-- Modal content-->
+              <div class="modal-content">
+                  
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">Slogan Düzenle</h4>
+                  </div>
+                  
+                  <div class="modal-body">
+                      <div class="desc">
+                          Unutmayın! Yazacağınız sloganlar ile size yakın olan kullanıcıları etkileyip bu kullanıcıları müşteriniz yapabilirsiniz.
+                      </div>
+                      <form method="post" action="slogan/guncelle">
+                        <div class="input-group">
+                          <input type="text" id="edit-slogan" name="slogan" class="form-control" placeholder="Kurumunuz için bir slogan">
+                          <input type="hidden" id="hidden-slogan-id" name="hidden-slogan-id">
+                          <span class="input-group-btn">
+                            <button class="btn btn-success" type="submit">Ekle</button>
+                          </span>
+                        </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+{% endblock %}
+
+{% block extra_scripts %}
+  <script type="text/javascript">
+    $('button.btn-warning').on('click', function(){
+      var slogan = $('.list-group-item.active');
+      var slogan_id = slogan.data('sloganId');
+      $("#editSlogan").modal();
+
+      $("#edit-slogan").val(slogan.text());
+      $("#hidden-slogan-id").val(slogan_id);
+    });
+
+    $('button.btn-danger').on('click', function(){
+      var slogan_id = $('.list-group-item.active').data('sloganId');
+      console.log(321);
+      $.ajax({
+        contentType: "application/json",
+        url: "/slogan/sil",
+        type: "POST",
+        data: JSON.stringify({ slogan: slogan_id }),
+        dataType: "json"
+      });
+
+      location.reload();
+    });
+
+  </script>
+{% endblock %}

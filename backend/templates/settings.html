@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}Ayarlar{% endblock %}
+
+{% block extra_head %}
+<style type="text/css">
+  #map { 
+    width: 100%;
+    height: 300px; 
+  }
+</style>
+{% endblock %}
+
+{% block main %}
+      <header class="dashboard">
+          <h1 class="shop-name"><a href="{{ url_for('dashboard') }}">{{ company_name }}</a></h1>
+          <ul class='menu'>
+              <li><a href="{{ url_for('settings') }}">Bilgileri Güncelle</a></li>
+              <li><a href="{{ url_for('logout') }}">Çıkış</a></li>
+          </ul>
+      </header>
+      
+      <section class="dashboard">
+          <div id="map"></div>
+          <div class="form-group">
+            <label for="usr">Kurum ismi:</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="usr">Email:</label>
+            <input type="email" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Üyelik Tipi:</label>
+            <div>
+                <select class="selectpicker">
+                    <option>Küçük Paket</option>
+                    <option>Orta Paket</option>
+                    <option>Büyük Paket</option>
+                </select>
+            </div>
+          </div>
+          <button class="btn btn-block profile-update">Güncelle</button>
+      </section>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAy6EracQlJ2LI3rf2Wci79gQjPCkySQC0" async defer></script>
+<script type="text/javascript">
+  var map;
+  var defer = $.Deferred();
+
+  function initMap(){
+      defer.resolve(map);
+      var istanbul = new google.maps.LatLng(41.1119553, 29.0576034);
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: istanbul,
+        zoom: 8
+      });
+  }
+</script>
+
+{% endblock %}

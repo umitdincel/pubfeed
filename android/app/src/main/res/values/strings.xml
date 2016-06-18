@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">PubFeed</string>
-
+    <string name="google_maps_key">AIzaSyAy6EracQlJ2LI3rf2Wci79gQjPCkySQC0</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
@@ -8,10 +8,13 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="intro_1_header">Chat With The Near</string>
-    <string name="intro_2_header">Meet New People</string>
-    <string name="intro_3_header">That’s All</string>
-    <string name="intro_1_desc">While most people enjoy casino gambling, sports betting, lottery and bingo playing for the fun.</string>
-    <string name="intro_2_desc">While most people enjoy casino gambling, sports betting, lottery and bingo playing for the fun.</string>
-    <string name="intro_3_desc">While most people enjoy casino gambling, sports betting, lottery and bingo playing for the fun.</string>
+    <string name="intro_1_header">Etraftaki insanlarla sohbet</string>
+    <string name="intro_2_header">Yeni insanlarla tanış</string>
+    <string name="intro_3_header">İşte bu kadar!</string>
+    <string name="intro_1_desc">İstediğin bir alanı belirle. Bu alandaki insanlarla sohbet etmeye başla.</string>
+    <string name="intro_2_desc">Yeni arkadaşlarla hemen tanışmaya başla. Artık sosyalleşmenin tam zamanı.</string>
+    <string name="intro_3_desc">Facebook hesabınla uygulamaya giriş yap ve uygulamanın keyfine sende var!</string>
+    <string name="first_message_owner">Bertie McDonald</string>
+    <string name="first_message">Enhance Your Life By Having</string>
+    <string name="send_message_placeholder">Mesaj yaz</string>
 </resources>
